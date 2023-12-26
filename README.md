@@ -1,66 +1,26 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel with RabbitMQ
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The RabbitMQ have been implemented using CloudAMQP. The details can be found in the blog https://www.twilio.com/blog/rabbitmq-job-queues-laravel.
 
-## About Laravel
+## Installing the project
+### Setup Cloud Server
+1. To setup the cloud server go to CloudAMQP and create a free account (without Credit card info). You'll find creadentials there to connect your laravel app with the cloud.
+![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/c62c3138-5074-4ed6-8ab6-c1ab2977ea28)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2. To install the project simple clone the repository and update the .env file with the proper cloud credentials.  
+![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/4c8e6ffb-25c4-490a-862f-e2afb7c04f23)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3. Now, use the following command-
+> php artisan serve
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+After that go to the link and you'll see a message box like the image below:
+![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/b76e4b75-4caa-4583-b081-227f88273e7f)
 
-## Learning Laravel
+Now, write any message here and press the 'send message' button. You can see the message from your laravel app console. Write the given command on the laravel app console to comsume the message.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+> php artisan mq:consume
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/ec45b2ff-54e6-4ca1-98d1-a092996131fd)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+To fully understand the code above, you will need to understand the RabbitMQ message flow. It works something like this:
+![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/8dca35d9-e7f7-49e9-92c9-66d25eb9b48b)
