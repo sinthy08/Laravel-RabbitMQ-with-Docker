@@ -7,7 +7,7 @@ The RabbitMQ have been implemented using CloudAMQP. The details can be found in 
 1. To setup the cloud server go to CloudAMQP and create a free account (without Credit card info). You'll find creadentials there to connect your laravel app with the cloud.
 ![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/c62c3138-5074-4ed6-8ab6-c1ab2977ea28)
 
-2. To install the project simple clone the repository and update the .env file with the proper cloud credentials.  
+2. To install the project simply clone the repository and update the .env file with the proper cloud credentials.  
 ![image](https://github.com/sinthy08/laravel_rabbitMQ/assets/40598386/4c8e6ffb-25c4-490a-862f-e2afb7c04f23)
 
 3. Now, use the following command-
