@@ -1,4 +1,4 @@
-# Laravel with RabbitMQ
+# Laravel RabbitMQ with Docker
 
 The RabbitMQ have been implemented using CloudAMQP. The details can be found in the blog https://www.twilio.com/blog/rabbitmq-job-queues-laravel.
 
